@@ -1,0 +1,46 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Guessingnumber 
+{
+public static void main(String arg[])
+{
+Scanner sc = new Scanner(System.in);
+Random random=new Random();
+int number;
+number=random.nextInt(6);
+int chances=5;
+int i,guessnumber;
+System.out.println("Choose a number between 1 and 100 ");
+for(i=0;i<chances;i++) 
+{
+System.out.println("Guess the number:");
+guessnumber=sc.nextInt();
+if(number==guessnumber) 
+{
+System.out.println("Congratulations! You have guessed the number and ");
+switch(i)
+{
+    case 0:System.out.println("You have guessed the number in your first chance and score is 10points");break;
+    case 1:System.out.println("You have guessed the number  in your second chance and score is 8points");break;
+    case 2:System.out.println("You have guessed the number  in your third chance and score is 6points");break;
+    case 3:System.out.println("You have guessed the number  in your fourth chance and score is 4points");break;
+    case 4:System.out.println("You have guessed the number  in your fifth chance and score is 2points");break;
+}
+}
+else if(number>guessnumber && i!=chances-1) 
+{
+System.out.println("The number is greater than"+guessnumber);
+}
+else if(number<guessnumber && i!=chances-1) 
+{
+System.out.println("The number is less than"+guessnumber);
+}
+}
+if(i==chances) 
+{
+System.out.println("You have completed the chances and your score is 0points");
+System.out.println("The number was"+number);
+}
+}
+}
+
